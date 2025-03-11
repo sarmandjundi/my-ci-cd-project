@@ -13,18 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hämta kod
+      - name: get code
         uses: actions/checkout@v3
 
-      - name: Installera Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Installera beroenden
+      - name: install independency
         run: npm install
 
-      - name: Köra tester
+      - name: run tests
         run: npm test
 
   deploy:
@@ -32,10 +32,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hämta kod
+      - name: get code
         uses: actions/checkout@v3
 
-      - name: Bygga och köra servern
+      - name: build and run server
         run: |
           npm install
           npm start &
