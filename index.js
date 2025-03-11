@@ -2,7 +2,7 @@ const http = require("http");
 
 const server = http.createServer((req, res) => {
     res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end("Hello, CI/CD!\n");
+    res.end("testing, CI/CD!\n");
 });
 
 server.listen(3000, () => {
