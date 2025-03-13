@@ -22,10 +22,16 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci # Faster & more reliable
+
+      - name: Verify Jest is installed
+        run: npx jest --version # Debugging step
+
+      - name: Fix Jest permissions (if needed)
+        run: chmod +x node_modules/.bin/jest
 
       - name: Run tests
-        run: npx --no-install jest --ci=false
+        run: npx --no-install jest --ci=false # Ensures correct Jest execution
 
   deploy:
     needs: build
@@ -36,7 +42,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Start server
         run: npm start &
