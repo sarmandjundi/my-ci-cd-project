@@ -21,11 +21,11 @@ jobs:
         with:
           node-version: 18
 
-      - name: install independency
+      - name: install independencies
         run: npm install
 
       - name: run tests
-        run: npm test -- --ci=false
+        run: npx jest --ci=false
 
   deploy:
     needs: build
