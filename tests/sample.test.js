@@ -1,3 +1,4 @@
-test("simple test example", ()=> {
-    expect(2+2).toBe(4);
-});
+test("Simple test example", () => {
+    expect(2 + 2).toBe(4);
+  });
+  
