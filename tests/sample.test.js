@@ -3,7 +3,8 @@ test("Simple test example", () => {
   });
   
 
-  test("check if string contains a word", ()=> {
-    const message = "hello, ci/cd pipeline!";
+  test("Check if string matches pattern", () => {
+    const message = "Hello, CI/CD Pipeline!";
     expect(message).toMatch(/CI\/CD/);
   });
+  
